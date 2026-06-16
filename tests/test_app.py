@@ -31,7 +31,7 @@ def test_get_activities():
 def test_signup_for_activity():
     """Test signing up for an activity"""
     email = "test@mergington.edu"
-    activity_name = "Chess Club"
+    activity_name = "Robotics Club"
     
     response = client.post(
         f"/activities/{activity_name}/signup?email={email}"
@@ -93,6 +93,6 @@ def test_remove_participant():
 def test_remove_nonexistent_participant():
     """Test removing a non-existent participant"""
     response = client.delete(
-        "/activities/Chess Club/participants/nonexistent@mergington.edu"
+        "/activities/Robotics Club/participants/nonexistent@mergington.edu"
     )
     assert response.status_code == 404
